@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "angular-deployment"
+  namespace: "angular-game"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "angular"
+    spec:
+      containers:
+      - image: yongshengbit/angular-app:v3
+        imagePullPolicy: Always
+        name: "angular"
+        ports:
+        - containerPort: 80
